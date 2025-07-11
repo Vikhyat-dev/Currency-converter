@@ -25,9 +25,3 @@ A simple and responsive currency converter web application built using **HTML**,
 
 ---
 
-## 📦 Installation
-
-1. **Clone this repository**
-   ```bash
-   git clone https://github.com/Vikhyat-dev/Currency-converter.git
-   cd Currency-converter
