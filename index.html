@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💰 MoneySwap - Where currencies come to party!</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Floating background decorations -->
+  <div class="floating-bg">
+    <div class="float-item" style="--delay: 0s; --duration: 6s;">💰</div>
+    <div class="float-item" style="--delay: 1s; --duration: 8s;">✨</div>
+    <div class="float-item" style="--delay: 2s; --duration: 7s;">🌟</div>
+    <div class="float-item" style="--delay: 3s; --duration: 9s;">💸</div>
+    <div class="float-item" style="--delay: 4s; --duration: 5s;">🎉</div>
+    <div class="float-item" style="--delay: 5s; --duration: 10s;">💎</div>
+    <div class="float-item" style="--delay: 6s; --duration: 6s;">🚀</div>
+    <div class="float-item" style="--delay: 7s; --duration: 8s;">⚡</div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="main-container">
+    <!-- Header with personality -->
+    <div class="header-section">
+      <div class="mood-display" id="currentMood">😊</div>
+      <div class="title-area">
+        <h1 class="main-title">MoneySwap</h1>
+        <p class="subtitle">Where currencies come to party! 🎉</p>
+      </div>
+      <div class="mood-display animate-delay">💸</div>
+    </div>
+
+    
+
+    <!-- Amount Input Section -->
+    <div class="input-section">
+      <label class="section-label">How much money? 💰</label>
+      <input 
+        type="number" 
+        id="amountInput" 
+        class="money-input" 
+        value="100" 
+        placeholder="Enter your amount..."
+      >
+      
+      <!-- Quick amount buttons -->
+      <div class="quick-buttons">
+        <button class="quick-btn" data-amount="50">
+          <span class="btn-emoji">💵</span>
+          <span>50</span>
+        </button>
+        <button class="quick-btn" data-amount="100">
+          <span class="btn-emoji">💰</span>
+          <span>100</span>
+        </button>
+        <button class="quick-btn popular" data-amount="500">
+          <span class="btn-emoji">🤑</span>
+          <span>500</span>
+        </button>
+        <button class="quick-btn special" data-amount="1000">
+          <span class="btn-emoji">💎</span>
+          <span>1000</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Currency Selection -->
+    <div class="currency-section">
+      <div class="currency-selector">
+        <label class="currency-label">From 👉</label>
+        <div class="select-container">
+          <div class="currency-display" id="fromDisplay">
+            <span class="flag-emoji" id="fromFlag">🇺🇸</span>
+            <div class="currency-info">
+              <div class="currency-code" id="fromCode">USD</div>
+              <div class="currency-vibe" id="fromVibe">The boss money!</div>
+            </div>
+          </div>
+          <select id="fromCurrency" class="currency-select">
+            <option value="USD">USD - US Dollar</option>
+            <option value="EUR">EUR - Euro</option>
+            <option value="GBP">GBP - British Pound</option>
+            <option value="JPY">JPY - Japanese Yen</option>
+            <option value="AUD">AUD - Australian Dollar</option>
+            <option value="CAD">CAD - Canadian Dollar</option>
+            <option value="CHF">CHF - Swiss Franc</option>
+            <option value="CNY">CNY - Chinese Yuan</option>
+            <option value="INR">INR - Indian Rupee</option>
+            <option value="BRL">BRL - Brazilian Real</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Swap Button -->
+      <div class="swap-container">
+        <button id="swapBtn" class="swap-button">
+          <span class="swap-icon">🔄</span>
+        </button>
+      </div>
+
+      <div class="currency-selector">
+        <label class="currency-label">To 👈</label>
+        <div class="select-container">
+          <div class="currency-display" id="toDisplay">
+            <span class="flag-emoji" id="toFlag">🇪🇺</span>
+            <div class="currency-info">
+              <div class="currency-code" id="toCode">EUR</div>
+              <div class="currency-vibe" id="toVibe">Fancy European vibes</div>
+            </div>
+          </div>
+          <select id="toCurrency" class="currency-select">
+            <option value="USD">USD - US Dollar</option>
+            <option value="EUR" selected>EUR - Euro</option>
+            <option value="GBP">GBP - British Pound</option>
+            <option value="JPY">JPY - Japanese Yen</option>
+            <option value="AUD">AUD - Australian Dollar</option>
+            <option value="CAD">CAD - Canadian Dollar</option>
+            <option value="CHF">CHF - Swiss Franc</option>
+            <option value="CNY">CNY - Chinese Yuan</option>
+            <option value="INR">INR - Indian Rupee</option>
+            <option value="BRL">BRL - Brazilian Real</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Result Display -->
+    <div class="result-section">
+      <div class="result-card">
+        <div class="result-amount" id="resultAmount">
+          <span class="currency-symbol" id="resultSymbol">€</span>
+          <span class="amount-value" id="resultValue">85.00</span>
+        </div>
+        <div class="result-details">
+          <div class="conversion-text" id="conversionText">
+            100 🇺🇸 USD = 85.00 🇪🇺 EUR
+          </div>
+          <div class="rate-info">
+            <span class="rate-badge" id="rateBadge">Rate: 1 USD = 0.8500 EUR</span>
+            <span class="trend-badge">📈 Looking good!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-section">
+      <button id="refreshBtn" class="action-button primary">
+        <span class="btn-icon" id="refreshIcon">🔄</span>
+        <span id="refreshText">Refresh Rates</span>
+      </button>
+    </div>
+
+    <!-- Recent Conversions -->
+    <div class="history-section" id="historySection" style="display: none;">
+      <div class="section-header">
+        <span class="section-icon">❤️</span>
+        <h3>Your Recent Adventures</h3>
+      </div>
+      <div class="history-list" id="historyList">
+        <!-- History items will be added here -->
+      </div>
+    </div>
+
+    <!-- Confetti overlay -->
+    <div class="confetti-overlay" id="confettiOverlay">
+      <div class="confetti-burst">🎉</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
